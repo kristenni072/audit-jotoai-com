@@ -2,6 +2,14 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+// Mock browser globals for SSR
+if (typeof globalThis.localStorage === 'undefined') {
+  globalThis.localStorage = { getItem: () => null, setItem: () => {}, removeItem: () => {} };
+}
+if (typeof globalThis.window === 'undefined') {
+  globalThis.window = globalThis;
+}
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const toAbsolute = (p) => path.resolve(__dirname, p);
 
