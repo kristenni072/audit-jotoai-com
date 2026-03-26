@@ -37,7 +37,7 @@ export default function BlogPost() {
   return (
     <>
     <Helmet>
-      <title>{post.title} - 唯客智审博客</title>
+      <title>{`${post.title} - 唯客智审博客`}</title>
       <meta name="description" content={post.excerpt || post.title} />
     </Helmet>
     <div className="bg-white min-h-screen">
