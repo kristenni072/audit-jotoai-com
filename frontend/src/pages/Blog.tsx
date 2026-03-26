@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, Calendar, ArrowRight, Mail, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -53,6 +54,11 @@ export default function Blog() {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>博客 - 唯客智审 | 法律科技与 AI 合同审查资讯</title>
+      <meta name="description" content="唯客智审博客：聚焦 AI 法律科技、合同风险管理、智能法务工作流最新动态与行业洞察。" />
+    </Helmet>
     <div className="bg-slate-50 min-h-screen">
       {/* Hero Section */}
       <section className="bg-white py-20 border-b border-slate-100">

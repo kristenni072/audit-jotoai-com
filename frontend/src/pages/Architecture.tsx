@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import React from 'react';
 import { motion } from 'motion/react';
 import { Cpu, SearchX, ShieldAlert, Server, Database } from 'lucide-react';
@@ -21,6 +22,11 @@ const staggerContainer = {
 
 export default function Architecture() {
   return (
+    <>
+    <Helmet>
+      <title>技术架构 - 唯客智审 AI 合同审查平台</title>
+      <meta name="description" content="唯客智审基于大语言模型与法律知识图谱构建，支持私有化部署，保障企业数据安全。" />
+    </Helmet>
     <div className="py-20 bg-slate-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 

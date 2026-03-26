@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import React from 'react';
 import { motion } from 'motion/react';
 import { CheckCircle2, ArrowRight, ArrowDownUp, FileCheck, FileText, Search, ShieldCheck, BrainCircuit, Activity, ShieldAlert } from 'lucide-react';
@@ -22,6 +23,11 @@ const staggerContainer = {
 
 export default function Features() {
   return (
+    <>
+    <Helmet>
+      <title>产品功能 - 唯客智审 AI 合同审查平台</title>
+      <meta name="description" content="唯客智审核心功能：智能合同解析、风险条款识别、多合同对比、法规合规检查，全面提升法务效率。" />
+    </Helmet>
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
       <section className="relative py-24 bg-blue-50/50 overflow-hidden">

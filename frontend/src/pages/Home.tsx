@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import React from 'react';
 import { motion } from 'motion/react';
 import { Calendar, ArrowDown, ArrowRight, Hourglass, SlidersHorizontal, SearchX, Wallet, Settings, ShieldAlert, Columns, Building2, Factory, Landmark, Cpu, CheckCircle2, FileText } from 'lucide-react';
@@ -22,6 +23,11 @@ const staggerContainer = {
 
 export default function Home() {
   return (
+    <>
+    <Helmet>
+      <title>唯客智审 - AI 赋能新一代合同审查平台 | 告别繁琐审查，拥抱智能风控</title>
+      <meta name="description" content="唯客智审将合同审查时间从数小时缩短至几分钟，以95%准确率为企业规避风险，重塑法务工作流。支持合同智能解析、风险识别、条款对比。" />
+    </Helmet>
     <div className="bg-slate-50">
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 overflow-hidden">

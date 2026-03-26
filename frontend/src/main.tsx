@@ -1,6 +1,7 @@
 import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import './index.css';
 import Layout from './components/Layout.tsx';
 import Home from './pages/Home.tsx';
@@ -13,6 +14,7 @@ import Privacy from './pages/Privacy.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <HelmetProvider>
     <BrowserRouter>
       <Layout>
         <Routes>
@@ -27,5 +29,6 @@ createRoot(document.getElementById('root')!).render(
         </Routes>
       </Layout>
     </BrowserRouter>
+    </HelmetProvider>
   </StrictMode>,
 );

@@ -1,8 +1,14 @@
+import { Helmet } from 'react-helmet-async';
 import React from 'react';
 import { motion } from 'motion/react';
 
 export default function Privacy() {
   return (
+    <>
+    <Helmet>
+      <title>隐私政策 - 唯客智审</title>
+      <meta name="description" content="唯客智审隐私政策：我们承诺保护您的企业数据安全，了解我们的数据收集、使用和保护政策。" />
+    </Helmet>
     <div className="bg-slate-50 min-h-screen pt-20 pb-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

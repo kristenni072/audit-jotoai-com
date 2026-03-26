@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { apiClient } from '../utils/api';
@@ -101,6 +102,11 @@ export default function Contact() {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>联系我们 - 唯客智审 AI 合同审查平台</title>
+      <meta name="description" content="联系唯客智审团队，预约产品演示，了解 AI 合同审查解决方案如何帮助您的企业提升法务效率。" />
+    </Helmet>
     <div className="py-24 bg-slate-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
