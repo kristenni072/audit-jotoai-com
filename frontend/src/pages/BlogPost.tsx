@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import React from 'react';
 import { motion } from 'motion/react';
 import { Calendar, User, Tag, ArrowLeft, Share2, MessageSquare } from 'lucide-react';
@@ -34,6 +35,11 @@ export default function BlogPost() {
   }
 
   return (
+    <>
+    <Helmet>
+      <title>{post.title} - 唯客智审博客</title>
+      <meta name="description" content={post.excerpt || post.title} />
+    </Helmet>
     <div className="bg-white min-h-screen">
       {/* Article Header */}
       <div className="relative h-[400px] md:h-[500px] overflow-hidden">
@@ -164,5 +170,6 @@ export default function BlogPost() {
         </div>
       </div>
     </div>
+    </>
   );
 }
