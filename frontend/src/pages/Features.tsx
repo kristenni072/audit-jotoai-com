@@ -551,5 +551,6 @@ export default function Features() {
         </motion.div>
       </section>
     </div>
+    </>
   );
 }

@@ -100,5 +100,6 @@ export default function Architecture() {
         </motion.div>
       </div>
     </div>
+    </>
   );
 }

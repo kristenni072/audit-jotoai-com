@@ -85,5 +85,6 @@ export default function Privacy() {
         </motion.div>
       </div>
     </div>
+    </>
   );
 }
