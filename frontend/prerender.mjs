@@ -3,11 +3,23 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 // Mock browser globals for SSR
+const noop = () => {};
+const noopEl = { addEventListener: noop, removeEventListener: noop, dispatchEvent: noop, style: {}, ownerDocument: null };
 if (typeof globalThis.localStorage === 'undefined') {
-  globalThis.localStorage = { getItem: () => null, setItem: () => {}, removeItem: () => {} };
+  globalThis.localStorage = { getItem: () => null, setItem: noop, removeItem: noop };
+}
+if (typeof globalThis.document === 'undefined') {
+  globalThis.document = {
+    addEventListener: noop, removeEventListener: noop, dispatchEvent: noop,
+    documentElement: { ...noopEl, style: {}, offsetWidth: 0, offsetHeight: 0 },
+    body: { ...noopEl },
+    createElement: () => ({ ...noopEl }),
+    createElementNS: () => ({ ...noopEl }),
+  };
+  noopEl.ownerDocument = globalThis.document;
 }
 if (typeof globalThis.window === 'undefined') {
-  globalThis.window = globalThis;
+  globalThis.window = { ...globalThis, addEventListener: noop, removeEventListener: noop, document: globalThis.document };
 }
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
